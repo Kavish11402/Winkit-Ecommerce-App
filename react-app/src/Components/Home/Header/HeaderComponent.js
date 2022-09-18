@@ -1,6 +1,10 @@
 import logo from "../../../Assets/Logo/logo.png"
+import {useContext} from "react";
+import AppContext from "../../../Context/AppContext";
+import {Link} from "react-router-dom";
 export default function HeaderComponent()
 {
+    const appContext = useContext(AppContext)
   return(
     <div className={"flex flex-row justify-between px-5 py-4 "}>
 
@@ -8,7 +12,9 @@ export default function HeaderComponent()
       {/*Logo Goes Here*/}
       <div className={"border-r-2 border-gray-300 pr-8"}>
 
-          <img src={logo} className={"h-12"}  alt={"Wink-it Logo"}/>
+          <Link to={"/"}>
+              <img src={logo} className={"h-12"}  alt={"Wink-it Logo"}/>
+          </Link>
 
       </div>
 
@@ -40,11 +46,20 @@ export default function HeaderComponent()
       {/*Login Logout Button Goes here*/}
       <div className={"inline-flex"}>
 
-          <button className={"bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-all font-bold text-lg px-14 mr-4"}>
-              <p>Login</p>
-          </button>
+          {
 
-          <button className={"bg-wGreen text-white font-bold inline-flex items-center text-lg px-4 rounded-lg"}>
+              appContext.userLogged?
+                  <Link to={"/account"} className={"bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-all font-bold text-lg px-14 mr-4 flex flex-col justify-center"}>
+                      <p>Account</p>
+                  </Link>
+                  :
+                  <button className={"bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-all font-bold text-lg px-14 mr-4"} onClick={()=>{appContext.setIsLoginOpen(true)}}>
+                      <p>Login</p>
+                  </button>
+
+          }
+
+          <button className={"bg-wGreen text-white font-bold inline-flex items-center text-lg px-4 rounded-lg"} onClick={()=>{appContext.setCartOpen(true)}}>
 
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 mr-3">
                   <path

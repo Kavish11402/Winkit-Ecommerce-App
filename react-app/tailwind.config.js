@@ -27,11 +27,12 @@ module.exports = {
           {
             "wYellow":"#fdcb56",
             "wGreen":"#44b236",
+            "wHoverGreen":"#65c15c",
             "MobileBannerBG":"#ECFFEC",
             "QRBanner": "#def8de"
           }
 
     },
   },
-  plugins: [],
+  plugins: [ require('@tailwindcss/forms'),],
 }

@@ -10,7 +10,7 @@ export default function BodyComponent()
     function NextArrow(props)
     {
         return(
-            <div className="bg-white rounded-full absolute p-2 top-1/2 right-0 z-50 drop-shadow-xl">
+            <div className="bg-white rounded-full absolute p-2 top-1/2 right-0 z-40 drop-shadow-xl">
 
                 <svg
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -26,7 +26,7 @@ export default function BodyComponent()
     function PreviousArrow(props)
     {
         return(
-            <div className="bg-white rounded-full absolute p-2 top-1/2 left-0 z-50 drop-shadow-xl">
+            <div className="bg-white rounded-full absolute p-2 top-1/2 left-0 z-40 drop-shadow-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                      stroke="currentColor" className="w-6 h-6" onClick={props.onClick}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
@@ -38,7 +38,6 @@ export default function BodyComponent()
 
 
 
-  /* TODO Ye Master Body ke Master Div me Lagega  border-b-2 border-gray-300*/
   return(
     <div className={"max-w-[73%] mx-auto mt-10 border-b-2 border-gray-300 pb-12"}>
 
